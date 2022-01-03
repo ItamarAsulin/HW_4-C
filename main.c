@@ -83,12 +83,8 @@ int main() {
         if (input == 'S') {
             scanf(" %d %d", &src, &dest);
             int result = shortest_path(&main_graph->graph_head, src, dest);
-            if (flag_first_row) {
-                printf("Dijsktra shortest path: %d ", result);
-                flag_first_row = 0;
-            } else {
-                printf("\nDijsktra shortest path: %d ", result);
-            }
+            printf("Dijsktra shortest path: %d \n", result);
+
 
         }
 
@@ -103,17 +99,13 @@ int main() {
             }
             int dist = tsp(&main_graph->graph_head, nodes_arr, num_of_nodes_to_travel);
             shortest_path_through_all = dist;
-            if(shortest_path_through_all == INT_MAX){
+            if (shortest_path_through_all == INT_MAX) {
                 shortest_path_through_all = -1;
             }
-            if (flag_first_row) {
-                printf("TSP shortest path: %d ", shortest_path_through_all);
-                free(nodes_arr);
-                flag_first_row = 0;
-            } else {
-                printf("\nTSP shortest path: %d ", shortest_path_through_all);
-                free(nodes_arr);
-            }
+
+            printf("TSP shortest path: %d \n", shortest_path_through_all);
+            free(nodes_arr);
+
         }
 
         if (input == EOF || input == '\n') {
