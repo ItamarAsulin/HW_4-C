@@ -84,10 +84,10 @@ int main() {
             scanf(" %d %d", &src, &dest);
             int result = shortest_path(&main_graph->graph_head, src, dest);
             if (flag_first_row) {
-                printf("Dijsktra shortest path: %d", result);
+                printf("Dijsktra shortest path: %d ", result);
                 flag_first_row = 0;
             } else {
-                printf("\nDijsktra shortest path: %d", result);
+                printf("\nDijsktra shortest path: %d ", result);
             }
 
         }
@@ -107,11 +107,11 @@ int main() {
                 shortest_path_through_all = -1;
             }
             if (flag_first_row) {
-                printf("TSP shortest path: %d", shortest_path_through_all);
+                printf("TSP shortest path: %d ", shortest_path_through_all);
                 free(nodes_arr);
                 flag_first_row = 0;
             } else {
-                printf("\nTSP shortest path: %d", shortest_path_through_all);
+                printf("\nTSP shortest path: %d ", shortest_path_through_all);
                 free(nodes_arr);
             }
         }
