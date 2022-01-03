@@ -4,9 +4,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
-#include <stdbool.h>
 #include "queue.h"
-#include "stack.h"
+
 
 typedef struct edge_ {
     int weight;
