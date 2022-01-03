@@ -8,17 +8,20 @@ FLAGS= -Wall -g
 
 all: graph
 
-graph: main.o graph2.a
-	$(CC) $(FLAGS) -o graph main.o graph2.a
+graph: main.o graph.a
+	$(CC) $(FLAGS) -o graph main.o graph.a
 
-main.o: main.c graph2.h
+main.o: main.c graph.h
 	$(CC) $(FLAGS) -c main.c
 
-graph2.a: graph2.o
-	$(AR) -rcs graph2.a graph2.o
+graph.a: graph.o queue.o
+	$(AR) -rcs graph.a graph.o queue.o
 
-graph2.o: graph2.c
-	$(CC) $(FLAGS) -c graph2.c
+graph.o: graph.c queue.h
+	$(CC) $(FLAGS) -c graph.c
+
+queue.o: queue.c
+	$(CC) $(FLAGS) -c queue.c
 
 clean: 
 	rm -f *.o *.a *.so graph
